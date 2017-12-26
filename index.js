@@ -18,6 +18,7 @@ var ConversationV1 = require('watson-developer-cloud/conversation/v1');
 // Sets server port and logs message on success
 app.listen(process.env.PORT || 1337, () => console.log('webhook is listening'));
 
+
 // Accepts POST requests at /webhook endpoint
 app.post('/webhook', (req, res) => {  
 
@@ -92,7 +93,7 @@ function handleMessage(sender_psid, received_message) {
   if (received_message.text) {    
     // Create the payload for a basic text message, which
     // will be added to the body of our request to the Send API
-    response = {
+    response = 
  conversation.message({
     input: { text: message },
     workspace_id: 'f8807618-9d50-4ba2-b37a-5c4b8c2ad482',
